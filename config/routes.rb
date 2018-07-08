@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :drinks
+    resources :ingredients
+
+    root to: "drinks#index"
+  end
+
   scope 'api' do
     scope 'v1' do
       resources :ingredients
